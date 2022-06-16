@@ -14,11 +14,19 @@ public class Exercici_2 {
 		 * aleat�ries en l'interval [0,20] i verifiqueu-los amb la funci� 
 		 * checkPalindrome subministrada. Vegeu enunciat de la pr�ctica
 		 */
+		int checked = 0;
+		for(int i = 0; i < 10000; i++) {
+			if(checkPalindrome(genPalindrome(alea.nextInt(20)))) checked++;
+		}
+		System.out.println("Correctes: " + checked + "/10000");
 	}
 	
 	private static String genPalindrome (int length) {
 		/* COMPLETAR */
-		return "";
+		char c = randomChar();
+		if(length == 0) return "";
+		if(length == 1) return String.valueOf(c);
+		return c + genPalindrome(length-2) + c;
 	}
 	
 	
