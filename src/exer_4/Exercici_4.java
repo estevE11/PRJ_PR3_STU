@@ -17,35 +17,38 @@ public class Exercici_4 {
 			ite = torturaIte(mot);
 			rec = tortura(mot);
 			if (!ite.equals(rec)) {
-				System.out.println("Discrepància detectada");
+				System.out.println("Discrepï¿½ncia detectada");
 				System.out.println("per al mot: "+mot);
-				System.out.println("la versió recursiva ha generat: "+rec);
-				System.out.println("la versió iterativa ha generat: "+ite);
+				System.out.println("la versiï¿½ recursiva ha generat: "+rec);
+				System.out.println("la versiï¿½ iterativa ha generat: "+ite);
 				System.out.println("CAL REVISAR EL CODI GENERAT");
 				System.exit(1);
 			}
 		}
 		
-		System.out.println("Prova finalitza sense haver detectat discrepàncies");
+		System.out.println("Prova finalitza sense haver detectat discrepï¿½ncies");
 		System.out.println("entre les versions iterativa i recursiva.");
-		System.out.println("Però això no vol dir ...");
+		System.out.println("Perï¿½ aixï¿½ no vol dir ...");
 		
 	}
 	
-	// Funció façana (llançadora) 
+	// Funciï¿½ faï¿½ana (llanï¿½adora) 
 	public static String tortura (String s) {
-		// escriure aquí la invocació inicial del funció recursiva de "tortura"
+		// escriure aquï¿½ la invocaciï¿½ inicial del funciï¿½ recursiva de "tortura"
+		return "";
 	}
 	
-	// escriure aquí la funció RECURSIVA de tortura
+	// escriure aquï¿½ la funciï¿½ RECURSIVA de tortura
 	
 	public static String torturaIte (String s) {
-		// escriure aquí el cos de la versió iterativa de la funció de "tortura"
+		// escriure aquï¿½ el cos de la versiï¿½ iterativa de la funciï¿½ de "tortura"
+		return "";
 	}
 	
 	public static String genCadena (int n) {
-		// escriure aquí el cos de la funció RECURSIVA que genera 
-		// cadenes de caràcters de mida n
+		// escriure aquï¿½ el cos de la funciï¿½ RECURSIVA que genera 
+		// cadenes de carï¿½cters de mida n
+		return "";
 	}
 	
 	

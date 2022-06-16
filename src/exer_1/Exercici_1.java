@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Exercici_1 {
 	
-	/* Punt d'entrada en execució per a fer proves */
+	/* Punt d'entrada en execuciï¿½ per a fer proves */
 	public static void main (String [] args) {
 		Random alea = new Random();
 		int original, resultat;
@@ -12,7 +12,7 @@ public class Exercici_1 {
 		
 		for (original = 0; original<=1000; original++) {
 			cadena = Integer.toString(original);
-			resultat = /* Invoqueu aquí la vostra funció de conversió */
+			resultat = convert(cadena, 0);
 			if (original!=resultat) {
 				System.out.println("Error. String era: "+cadena+" resultat ha estat: "+resultat);
 			}
@@ -21,7 +21,7 @@ public class Exercici_1 {
 		for (int i=1; i<=100000; i++) {
 			original = alea.nextInt(Integer.MAX_VALUE);
 			cadena = Integer.toString(original);
-			resultat = /* Invoqueu aquí la vostra funció de conversió */
+			resultat = convert(cadena, 0);
 			if (original!=resultat) {
 				System.out.println("Error. String era: "+cadena+" resultat ha estat: "+resultat);
 			}
@@ -30,12 +30,15 @@ public class Exercici_1 {
 	
 	
 	
-	/* ESCRIVIU AQUÍ LA VOSTRA FUNCIÓ DE CONVERSIÓ String -> int */ 
+	/* ESCRIVIU AQUï¿½ LA VOSTRA FUNCIï¿½ DE CONVERSIï¿½ String -> int */
+
+	public static int convert(String s, int currentVal) {
+		if(s.length() == 0) return currentVal;
+		return convert(s.substring(1), currentVal + (translateChar(s.charAt(0))*(int)(Math.pow(10,s.length()-1))));
+	}
 	
 	
-	
-	
-	/* funció que "transforma" un caràcter en el dígit (int) corresponent */
+	/* funciï¿½ que "transforma" un carï¿½cter en el dï¿½git (int) corresponent */
 	private static int translateChar (char c) {
 		switch (c) {
 		case '0': return 0;
