@@ -35,20 +35,47 @@ public class Exercici_4 {
 	// Funci� fa�ana (llan�adora) 
 	public static String tortura (String s) {
 		// escriure aqu� la invocaci� inicial del funci� recursiva de "tortura"
-		return "";
+		return torturaRec(s, 0);
 	}
 	
 	// escriure aqu� la funci� RECURSIVA de tortura
+	public static String torturaRec(String s, int i) {
+		if(s.length() == 0) return "";
+
+		int centre = s.length()/2;
+		String esquerra = s.substring(0, centre);
+		String dreta = s.substring(centre+1);
+
+		if(s.charAt(centre) == 'a') {
+			String c = "^";
+			if((i+centre) % 2 == 0) c = "*";
+			return torturaRec(esquerra, i) + c + torturaRec(dreta, centre+1);
+		}
+		return torturaRec(esquerra, i) + s.charAt(centre) + torturaRec(dreta, centre+1);
+	}
 	
 	public static String torturaIte (String s) {
 		// escriure aqu� el cos de la versi� iterativa de la funci� de "tortura"
-		return "";
+		String res = new String();
+		for(int i = 0; i < s.length(); i++) {
+			String c = String.valueOf(s.charAt(i));
+			if(c.equals("a")) {
+				if(i % 2 == 0) {
+					c = "*";
+				} else {
+					c = "^";
+				}
+			}
+			res += c;
+		}
+		return res;
 	}
 	
 	public static String genCadena (int n) {
 		// escriure aqu� el cos de la funci� RECURSIVA que genera 
 		// cadenes de car�cters de mida n
-		return "";
+		if(n == 0) return "";
+		return alfabet[alea.nextInt(alfabet.length)] + genCadena(n-1);
 	}
 	
 	
