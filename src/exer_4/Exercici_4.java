@@ -35,23 +35,25 @@ public class Exercici_4 {
 	// Funci� fa�ana (llan�adora) 
 	public static String tortura (String s) {
 		// escriure aqu� la invocaci� inicial del funci� recursiva de "tortura"
-		return torturaRec(s, 0);
+		return torturaRec(s, 0, "start");
 	}
 	
 	// escriure aqu� la funci� RECURSIVA de tortura
-	public static String torturaRec(String s, int i) {
-		if(s.length() == 0) return "";
+	public static String torturaRec(String s, int l, String costat) {
+		if (s.length()==0) return "";
 
 		int centre = s.length()/2;
 		String esquerra = s.substring(0, centre);
-		String dreta = s.substring(centre+1);
+		String dreta = s.substring(centre+1, s.length());
+		String c = "";
 
-		if(s.charAt(centre) == 'a') {
-			String c = "^";
-			if((i+centre) % 2 == 0) c = "*";
-			return torturaRec(esquerra, i) + c + torturaRec(dreta, centre+1);
+		if(s.charAt(centre)=='a') {
+			c = ((centre+l)%2==0)?"*":"";
+		} else {
+			c = String.valueOf(s.charAt(centre));
 		}
-		return torturaRec(esquerra, i) + s.charAt(centre) + torturaRec(dreta, centre+1);
+
+		return torturaRec(esquerra,l, "esquerra")+c+torturaRec(dreta,centre+l+1, "dreta");
 	}
 	
 	public static String torturaIte (String s) {
@@ -63,7 +65,7 @@ public class Exercici_4 {
 				if(i % 2 == 0) {
 					c = "*";
 				} else {
-					c = "^";
+					c = "";
 				}
 			}
 			res += c;
